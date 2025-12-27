@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ===== Dark Theme Variables ===== */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0f0f14;
+  --bg-card: #16161d;
+  --bg-input: #1a1a24;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(167, 139, 250, 0.3);
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent-primary: #a78bfa;
+  --accent-secondary: #7c3aed;
+  --accent-gradient: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  --danger: #ef4444;
+  --success: #22c55e;
+  --warning: #f59e0b;
+}
+
+* {
+  font-family: "Urbanist", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Global Dark Overrides ===== */
+.bg-light {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-white {
+  background-color: var(--bg-card) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* ===== Form Controls ===== */
+.form-control,
+.form-select {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--bg-input);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.15) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.form-control:disabled {
+  background-color: var(--bg-secondary);
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.form-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.form-check-input {
+  background-color: var(--bg-input);
+  border-color: var(--border-color);
+}
+
+.form-check-input:checked {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.form-check-label {
+  color: var(--text-secondary);
+}
+
+/* ===== Cards ===== */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.card-body {
+  color: var(--text-primary);
+}
+
+.card-title {
+  color: var(--text-primary);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background: var(--accent-gradient);
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #b89dfc 0%, #8b4ae0 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
+}
+
+.btn-primary:disabled {
+  background: var(--accent-gradient);
+  opacity: 0.6;
+}
+
+.btn-secondary {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-card);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.btn-outline-secondary {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--bg-card);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.btn-outline-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-outline-danger:hover {
+  background-color: var(--danger);
+  border-color: var(--danger);
+  color: white;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-success {
+  background-color: var(--success);
+  border-color: var(--success);
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  border-color: var(--warning);
+  color: #000;
+}
+
+/* ===== Borders & Shadows ===== */
+.border {
+  border-color: var(--border-color) !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.rounded {
+  border-radius: 12px !important;
+}
+
+/* ===== Typography ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-primary);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+hr {
+  border-color: var(--border-color);
+  opacity: 1;
+}
+
+/* ===== Utilities ===== */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation {
+  animation: spin 1s linear infinite;
+}
+
+/* ===== Invoice Form Specific ===== */
+.mainpage input:focus,
+.invoiceform input:focus,
+.invoiceform textarea:focus,
+.invoiceform select:focus {
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.15) !important;
+}
+
+.invoiceform h5 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.invoiceform .card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+/* ===== Invoice Preview (Keep white for PDF) ===== */
+.previewpage .invoice-preview {
+  width: 794px;
+  min-height: 1123px;
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* ===== Template Grid ===== */
+.template-hover {
+  transition: all 0.3s ease;
+  background-color: var(--bg-card);
+}
+
+.template-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(167, 139, 250, 0.2);
+  border-color: var(--accent-primary) !important;
+}
+
+/* ===== Navbar Dark Override ===== */
+.navbar {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-secondary);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--accent-primary);
+}
+
+.navbar-light .navbar-toggler {
+  border-color: var(--border-color);
+}
+
+.navbar-light .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ===== Toast Overrides ===== */
+[data-sonner-toaster] {
+  --normal-bg: var(--bg-card);
+  --normal-text: var(--text-primary);
+  --normal-border: var(--border-color);
+}
