@@ -437,7 +437,7 @@ const InvoiceForm = () => {
           <div className="w-100" style={{ maxWidth: "400px" }}>
             <div className="d-flex justify-content-between py-2" style={{ color: "#a1a1aa" }}>
               <span>Subtotal</span>
-              <span style={{ color: "#fafafa" }}>${subtotal.toFixed(2)}</span>
+              <span style={{ color: "#fafafa" }}>₹{subtotal.toFixed(2)}</span>
             </div>
             <div className="d-flex justify-content-between align-items-center py-2">
               <label style={{ color: "#a1a1aa" }}>Tax Rate (%)</label>
@@ -452,12 +452,12 @@ const InvoiceForm = () => {
             </div>
             <div className="d-flex justify-content-between py-2" style={{ color: "#a1a1aa" }}>
               <span>Tax Amount</span>
-              <span style={{ color: "#fafafa" }}>${taxAmount.toFixed(2)}</span>
+              <span style={{ color: "#fafafa" }}>₹{taxAmount.toFixed(2)}</span>
             </div>
             <hr style={{ borderColor: "rgba(255, 255, 255, 0.1)" }} />
             <div className="d-flex justify-content-between py-2 fw-bold" style={{ fontSize: "1.1rem" }}>
               <span style={{ color: "#fafafa" }}>Grand Total</span>
-              <span style={{ color: "#a78bfa" }}>${grandTotal.toFixed(2)}</span>
+              <span style={{ color: "#a78bfa" }}>₹{grandTotal.toFixed(2)}</span>
             </div>
           </div>
         </div>

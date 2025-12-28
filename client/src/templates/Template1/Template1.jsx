@@ -80,7 +80,7 @@ const Template1 = ({data}) => {
                             <tr key={index}>
                                 <td className="p-2">{item.name}</td>
                                 <td className="p-2 text-center">{item.qty}</td>
-                                <td className="p-2 text-end">${Number(item.amount)?.toFixed(2)}</td>
+                                <td className="p-2 text-end">₹{Number(item.amount)?.toFixed(2)}</td>
                                 <td className="p-2 text-end">{(Number(item.qty) * Number(item.amount)).toFixed(2)}</td>
                             </tr>
                         ))}
@@ -96,7 +96,7 @@ const Template1 = ({data}) => {
                     <div className="p-3 w-100 totals-box" style={{maxWidth: "300px"}}>
                         <div className="d-flex justify-content-between mb-2">
                             <span>Sub Total: </span>
-                            <span>${data.subtotal.toFixed(2)}</span>
+                            <span>₹{data.subtotal.toFixed(2)}</span>
                         </div>
                         {data.tax > 0 &&(
                             <div className="d-flex justify-content-between-mb-2">
@@ -106,7 +106,7 @@ const Template1 = ({data}) => {
                         )}
                         <div className="d-flex justify-content-between fw-bold total-highlight">
                             <span>Total: </span>
-                            <span>${data.total.toFixed(2)}</span>
+                            <span>₹{data.total.toFixed(2)}</span>
                         </div>
                     </div>
                 </div>
