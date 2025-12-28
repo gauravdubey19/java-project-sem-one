@@ -8,7 +8,7 @@ import { templates } from "../assets/assets.js";
 import { AppContext } from "../context/AppContext.jsx";
 import InvoicePreview from "../components/InvoicePreview.jsx";
 import { deleteInvoice, saveInvoice } from "../service/invoiceService.js";
-import { uploadInvoiceThumbnail } from "../service/cloudinaryService.js";
+import { uploadCompanyLogo, uploadInvoiceThumbnail } from "../service/cloudinaryService.js";
 import { generatePdfFromElement } from "../util/pdfUtils.js";
 
 const PreviewPage = () => {
@@ -29,9 +29,11 @@ const PreviewPage = () => {
       });
       const imageData = canvas.toDataURL("image/png");
       const thumbnailUrl = await uploadInvoiceThumbnail(imageData);
+      const logoUrl = await uploadCompanyLogo(invoiceData.logo);
       const payload = {
         ...invoiceData,
         thumbnailUrl: thumbnailUrl,
+        logo: logoUrl,
         template: selectedTemplate,
       };
       const response = await saveInvoice(baseURL, payload);
